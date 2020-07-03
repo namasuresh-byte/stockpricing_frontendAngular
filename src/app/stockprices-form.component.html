@@ -1,0 +1,37 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #stockpricesForm="ngForm">
+    <div class="form-group">
+        <label for="name">Stock Symbol</label>
+        <input type="text" [(ngModel)]="stockprices.stocksymbol" 
+          class="form-control"
+          id="stocksymbol"
+          name="stocksymbol"
+          placeholder="Enter Stock symbol"
+          required #name="ngModel">
+      </div>	
+      <div class="form-group">
+        <label for="name">Price</label>
+        <input type="text" [(ngModel)]="stockprices.price" 
+          class="form-control"
+          id="price"
+          name="price"
+          placeholder="Enter price"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="email">Event Time</label>
+        <input type="text" [(ngModel)]="stockprices.eventtime" 
+          class="form-control"
+          id="eventtime"
+          name="eventtime"
+          placeholder="Enter your eventtime "
+          required #email="ngModel">
+        <div [hidden]="!email.pristine" class="alert alert-danger">Event time is required</div>
+      </div>
+      <button type="submit" [disabled]="!stockpricesForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

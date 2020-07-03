@@ -1,0 +1,20 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Stock Symbol</th>
+          <th scope="col">Price</th>
+          <th scope="col">trend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stockprices of stockpricess">
+          <td>{{ stockprices.stocksymbol }}</td>
+          <td>{{ stockprices.price }}</td>
+          <td>{{ stockprices.trend }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
